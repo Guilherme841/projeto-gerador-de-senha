@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="estilos/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <main>
-        <div id="senhaGerada"><input type="text" name="" id="password"></div>
-      <section id="container">
-        <div id="containerRange">Tamanho da senha <input type="range" name="" id="size" /></div>
-        <div id="containerRadio">
-            <div><input type="radio" name="" id="facilDePronunciar">Fácil de pronunciar</div>
-            <div><input type="radio" name="" id="facilDeLer">Fácil de ler</div>
-            <div><input type="radio" name="" id="todosOsCaracteres">Todos os caracteres</div>
-        </div>
-        <div id="containarCheckbox">
-            <div>
-              <input type="checkbox" name="" id="lettersUppecase" />Letras
-              maiúsculas
-            </div>
-            <div>
-              <input type="checkbox" name="" id="lettersLowcase" />Letras minúsculas
-            </div>
-            <div><input type="checkbox" name="" id="symbols" />Símbolos</div>
-            <div><input type="checkbox" name="" id="numbers" />Números</div>
-        </div>
-      </section>
-    </main>
-    <script src="scripts/script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="estilos/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div id="senhaGerada"><input type="text" name="" id="password"></div>
+    <section id="container">
+      <div><label for="sizes">Tamanho da senha</label><input type="range" name="range" id="sizes" min="0" max="50" value="8" oninput="ires.innerHTML = Number(sizes.value)">
+        <output id="ires">5</output></div>
+      <div><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de pronunciar</label></div>
+      <div><input type="radio" name="radiosOptions" id="facilDeLer"><label for="facilDeLer">Fácil de ler</label></div>
+      <div><input type="radio" name="radiosOptions" id="todosOsCaracteres"><label for="todosOsCaracteres">Todos os caracteres</label></div>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="lettersUppecase" /><label for="lettersUppecase">
+          Letras
+          maiúsculas
+        </label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="lettersLowcase" /><label for="lettersLowcase">Letras minúsculas</label>
+      </div>
+      <div><input type="checkbox" name="" id="symbols" /><label for="symbols">Símbolos</label></div>
+      <div><input type="checkbox" name="" id="numbers" /><label for="numbers">Números</label></div>
+      </div>
+    </section>
+  </main>
+  <script src="scripts/script.js"></script>
+</body>
+
 </html>
