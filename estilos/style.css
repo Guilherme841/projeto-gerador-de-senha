@@ -26,17 +26,30 @@ html, body, main {
     margin: auto;
     background-color: lightblue;
     width: 70vw;
-    font-size: 1em;
+    font-size: 1.5em;
+}
+
+#containerRange {
+    margin: auto;
 }
 
 #containerRadio {
     margin: auto;
 }
 
+#containerRadio > div {
+    padding: 5px;
+}
+
 #containarCheckbox {
     margin: auto;
 }
 
-#containerRange {
-    margin: auto;
+#containarCheckbox > div {
+    padding: 5px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
 }
