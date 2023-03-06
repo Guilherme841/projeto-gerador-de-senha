@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="estilos/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="estilos/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+        <div id="senhaGerada"><input type="text" name="" id="password"></div>
+      <section id="container">
+        <div id="containerRange">Tamanho da senha <input type="range" name="" id="size" /></div>
+        <div id="containerRadio">
+            <div><input type="radio" name="" id="facilDePronunciar">Fácil de pronunciar</div>
+            <div><input type="radio" name="" id="facilDeLer">Fácil de ler</div>
+            <div><input type="radio" name="" id="todosOsCaracteres">Todos os caracteres</div>
+        </div>
+        <div id="containarCheckbox">
+            <div>
+              <input type="checkbox" name="" id="lettersUppecase" />Letras
+              maiúsculas
+            </div>
+            <div>
+              <input type="checkbox" name="" id="lettersLowcase" />Letras minúsculas
+            </div>
+            <div><input type="checkbox" name="" id="symbols" />Símbolos</div>
+            <div><input type="checkbox" name="" id="numbers" />Números</div>
+        </div>
+      </section>
+    </main>
     <script src="scripts/script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body, main {
+    height: 100vh;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+#senhaGerada {
+    display: flex;
+    justify-content: center;
+    background-color: lightcoral;
+    margin: 80px 0px 50px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: auto;
+    background-color: lightblue;
+    width: 70vw;
+    font-size: 1em;
+}
+
+#containerRadio {
+    margin: auto;
+}
+
+#containarCheckbox {
+    margin: auto;
+}
+
+#containerRange {
+    margin: auto;
+}
