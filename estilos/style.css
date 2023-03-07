@@ -6,7 +6,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html, body, main {
+html,
+body,
+main {
     height: 100vh;
     background-color: rgb(221, 218, 218);
     overflow: hidden;
@@ -18,7 +20,7 @@ html, body, main {
     margin: 30px 0px 30px;
 }
 
-#senhaGerada > input {
+#senhaGerada>input {
     width: 65vw;
     padding: 10px;
     border-radius: 5px;
@@ -38,11 +40,12 @@ html, body, main {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.226);
 }
 
-#container > div {
+#container>div {
     padding: 10px;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -70,22 +73,20 @@ input[type="radio"], input[type="checkbox"] {
     background-color: gray;
     color: white;
 }
+
 /* Tira a aparencia padrao = -webkit-appearance: none; */
 input[type=range] {
-    -webkit-appearance: none;
+    appearance: none;
     background: #ddd;
     border-radius: 10px;
-    
-  }
-  /* Configura o polegar do controle = ::-webkit-slider-thumb */
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
+}
+
+/* Configura o polegar do controle = ::-webkit-slider-thumb */
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
     width: 20px;
     height: 20px;
     background: #333;
     border-radius: 50%;
     cursor: pointer;
-  }
-  
-
-  
+}

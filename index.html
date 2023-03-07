@@ -16,23 +16,28 @@
   <main>
     <div id="senhaGerada"><input type="text" name="" id="password"></div>
     <section id="container">
-      <div><label for="sizes">Tamanho da senha</label><input type="range" name="range" id="sizes" min="0" max="50" value="8" oninput="ires.innerHTML = Number(sizes.value)">
-        <output id="ires">5</output></div>
-      <div><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de pronunciar</label></div>
+      <div><label for="sizes">Tamanho da senha</label><input type="range" name="range" id="sizes" min="0" max="50"
+          value="8" class="tamanhoDaSenha" oninput="ires.innerHTML = Number(sizes.value)">
+        <output id="ires">8</output>
+      </div>
+      <div><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de
+          pronunciar</label></div>
       <div><input type="radio" name="radiosOptions" id="facilDeLer"><label for="facilDeLer">Fácil de ler</label></div>
-      <div><input type="radio" name="radiosOptions" id="todosOsCaracteres"><label for="todosOsCaracteres">Todos os caracteres</label></div>
+      <div><input type="radio" name="radiosOptions" id="todosOsCaracteres"><label for="todosOsCaracteres">Todos os
+          caracteres</label></div>
       </div>
       <div>
-        <input type="checkbox" name="" id="lettersUppecase" /><label for="lettersUppecase">
+        <input type="checkbox" name="" id="lettersUppercase" class="checkboxes" /><label for="lettersUppercase">
           Letras
           maiúsculas
         </label>
       </div>
       <div>
-        <input type="checkbox" name="" id="lettersLowcase" /><label for="lettersLowcase">Letras minúsculas</label>
+        <input type="checkbox" name="" id="lettersLowcase" checked  class="checkboxes" /><label
+          for="lettersLowcase">Letras minúsculas</label>
       </div>
-      <div><input type="checkbox" name="" id="symbols" /><label for="symbols">Símbolos</label></div>
-      <div><input type="checkbox" name="" id="numbers" /><label for="numbers">Números</label></div>
+      <div><input type="checkbox" name="" id="symbols" class="checkboxes" /><label for="symbols">Símbolos</label></div>
+      <div><input type="checkbox" name="" id="numbers" class="checkboxes" /><label for="numbers">Números</label></div>
       </div>
     </section>
     <div id="gerar"><button id="gerarSenha">Gerar senha</button></div>
