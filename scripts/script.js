@@ -7,29 +7,42 @@ const letrasMinusculas = document.getElementById("lettersLowcase");
 const simbolos = document.getElementById("symbols");
 const numeros = document.getElementById("numbers");
 const gerar = document.getElementById("gerarSenha");
-const teste = document.querySelectorAll('input[type="checkbox"]');
-
-let arrTeste = Array.from(teste);
-let arrCheck = arrTeste.filter((checkbox) => checkbox.checked === true);
-
+const checked = document.querySelectorAll("input[type='checkbox']");
+const arrChecked = Array.from(checked);
 letrasMinusculas.disabled = true;
 
-if (arrCheck.length > 1) {
-  letrasMinusculas.disabled = false;
-  alert('ok')
+function verificar() {
+  var contador = 0;
+  for (let i = 0; i < arrChecked.length; i++) {
+    if (arrChecked[i].checked === true) {
+      contador++;
+      console.log(contador);
+    }
+  }
+  if (contador < 2) {
+    for (let i = 0; i < arrChecked.length; i++) {
+      if (arrChecked[i].checked === true) {
+        arrChecked[i].disabled = true;
+      }
+    }
+  } else if (contador > 1) {
+    for (let i = 0; i < arrChecked.length; i++) {
+      if (arrChecked[i].checked === true) {
+        arrChecked[i].disabled = false;
+      }
+    }
+  }
 }
 
+for (let elemento of arrChecked) {
+  elemento.addEventListener("click", function () {
+    verificar();
+  });
+}
+
+(function () {})();
+
 gerar.addEventListener("click", function () {
-  //   let contador = 0;
-  //   for (let i = 0; i < teste.length; i++) {
-  //     if (teste[i].checked === true) {
-  //       contador++;
-  //       console.log(contador);
-  //     }
-  //   }
-  //   if (contador > 1) {
-  //     letrasMinusculas.disabled = false;
-  //   }
   console.log(range.value);
   if (facilDePronunciar[0].checked) {
     console.log("facilDePronunciar = true");
