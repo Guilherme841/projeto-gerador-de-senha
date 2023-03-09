@@ -8,6 +8,7 @@ const simbolos = document.getElementById("symbols");
 const numeros = document.getElementById("numbers");
 const gerar = document.getElementById("gerarSenha");
 const checked = document.querySelectorAll("input[type='checkbox']");
+const inputSenha = document.getElementById("password")
 const arrChecked = Array.from(checked);
 letrasMinusculas.disabled = true;
 
@@ -40,18 +41,31 @@ for (let elemento of arrChecked) {
   });
 }
 
-(function () {})();
-
 gerar.addEventListener("click", function () {
-  console.log(range.value);
-  if (facilDePronunciar[0].checked) {
-    console.log("facilDePronunciar = true");
-  } else {
-    console.log("facilDePronunciar = false");
+  // console.log(range.value);
+  // if (facilDePronunciar[0].checked) {
+  //   console.log("facilDePronunciar = true");
+  // } else {
+  //   console.log("facilDePronunciar = false");
+  // }
+  // if (letrasMinusculas.checked) {
+  //   console.log("letrasMinusculas = true");
+  // } else {
+  //   console.log("letrasMinusculas = false");
+  // }
+  function gerarSenha(size) {
+    let caracteres = "";
+    if (letrasMaiusculas.checked) {
+      caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+    let senha = '';
+    for (let i = 0; i < size; i++) {
+      let pos = Math.floor(Math.random() * caracteres.length)
+      senha +=  caracteres.charAt(pos);
+    }
+    return senha;
   }
-  if (letrasMinusculas.checked) {
-    console.log("letrasMinusculas = true");
-  } else {
-    console.log("letrasMinusculas = false");
-  }
+  let sizePassword = range.value;
+  let randowPass = gerarSenha(sizePassword);
+  inputSenha.value = randowPass;
 });
