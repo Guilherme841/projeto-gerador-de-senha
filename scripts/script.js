@@ -137,5 +137,3 @@ gerar.addEventListener("click", function () {
   let randowPass = gerarSenha(sizePassword);
   inputSenha.value = randowPass;
 });
-
-
