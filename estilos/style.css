@@ -12,6 +12,7 @@ main {
     height: 100vh;
     background-color: rgb(221, 218, 218);
     overflow: hidden;
+    position: relative;
 }
 
 #senhaGerada {
@@ -20,7 +21,7 @@ main {
     margin: 30px 0px 30px;
 }
 
-#senhaGerada>input {
+input[type="text"] {
     width: 65vw;
     padding: 10px;
     border-radius: 5px;
@@ -33,7 +34,7 @@ main {
 #container {
     margin: auto;
     width: 70vw;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -120,4 +121,30 @@ input[type=range]::-webkit-slider-thumb {
     background: #333;
     border-radius: 50%;
     cursor: pointer;
+}
+
+#mais > span {
+    margin: 0;
+    padding: 0;
+}
+
+#mais {
+    background-color: whitesmoke;
+    outline: 0;
+    border: 0;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="range"] {
+   
+}
+
+#divRange {
+    display: flex;
+}
+
+#out {
+    padding-left: 5px;
 }

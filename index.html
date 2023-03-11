@@ -12,17 +12,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
   <main>
     <div id="senhaGerada"><input type="text" name="" id="password"></div>
     <section id="container">
-      <div><label for="sizes">Tamanho da senha</label><input type="range" name="range" id="sizes" min="0" max="50"
-          value="8" class="tamanhoDaSenha" oninput="ires.innerHTML = Number(sizes.value)">
-        <output id="ires">8</output>
+      <span class="material-symbols-outlined">
+        more_horiz
+      </span>
+      <div><label for="sizes">Tamanho da senha</label><br>
+        <div id="divRange">
+          <input type="range" name="range" id="sizes" min="0" max="50" value="8" class="tamanhoDaSenha"
+            oninput="ires.innerHTML = Number(sizes.value)">
+          <div id="out">
+            <output id="ires">8</output>
+          </div>
+        </div>
       </div>
-      <div><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de
+      <div><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de <abbr
+            title="asdasdas"></abbr>
           pronunciar</label></div>
       <div><input type="radio" name="radiosOptions" id="facilDeLer"><label for="facilDeLer">Fácil de ler</label></div>
       <div><input type="radio" name="radiosOptions" id="todosOsCaracteres"><label for="todosOsCaracteres">Todos os

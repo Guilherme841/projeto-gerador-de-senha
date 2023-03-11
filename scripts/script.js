@@ -1,5 +1,5 @@
 const range = document.querySelector(".tamanhoDaSenha");
-const facilDePronunciar = document.getElementsByName("radiosOptions");
+const facilDePronunciar = document.getElementById("facilDePronunciar");
 const facilDeLer = document.getElementById("facilDeLer");
 const todosOsCaracteres = document.getElementById("todosOsCaracteres");
 const letrasMaiusculas = document.getElementById("lettersUppercase");
@@ -8,19 +8,20 @@ const simbolos = document.getElementById("symbols");
 const numeros = document.getElementById("numbers");
 const gerar = document.getElementById("gerarSenha");
 const checked = document.querySelectorAll("input[type='checkbox']");
-const inputSenha = document.getElementById("password")
+const inputSenha = document.getElementById("password");
 const arrChecked = Array.from(checked);
+const radios = document.querySelectorAll("input[type='radio']");
+const arrRadios = Array.from(radios);
 letrasMinusculas.disabled = true;
 
 function verificar() {
-  var contador = 0;
+  let contador = 0;
   for (let i = 0; i < arrChecked.length; i++) {
     if (arrChecked[i].checked === true) {
       contador++;
-      console.log(contador);
     }
   }
-  if (contador < 2) {
+  if (contador === 1) {
     for (let i = 0; i < arrChecked.length; i++) {
       if (arrChecked[i].checked === true) {
         arrChecked[i].disabled = true;
@@ -41,27 +42,78 @@ for (let elemento of arrChecked) {
   });
 }
 
+for (let elemento of arrRadios) {
+  elemento.addEventListener("click", function () {
+    if (facilDePronunciar.checked === true) {
+      if (simbolos.checked || numeros.checked) {
+        simbolos.checked = false;
+        numeros.checked = false;
+      }
+      letrasMaiusculas.checked = true;
+      simbolos.disabled = true;
+      numeros.disabled = true;
+    } else {
+      simbolos.disabled = false;
+      numeros.disabled = false;
+    }
+    if (facilDeLer.checked === true) {
+      if (simbolos.checked || numeros.checked) {
+        simbolos.checked = false;
+        numeros.checked = false;
+      }
+      letrasMaiusculas.checked = true;
+    }
+    if (todosOsCaracteres.checked === true) {
+      simbolos.checked = true;
+      numeros.checked = true;
+      letrasMinusculas.checked = true;
+      letrasMaiusculas.checked = true;
+    }
+    verificar();
+  });
+}
+
+// abcdefghijklmnopqrstuvwxyz
+// ABCDEFGHIJKLMNOPQRSTUVWXYZ
+// #%$!^*&@
+// 1234567890
+// abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789
+
 gerar.addEventListener("click", function () {
-  // console.log(range.value);
-  // if (facilDePronunciar[0].checked) {
-  //   console.log("facilDePronunciar = true");
-  // } else {
-  //   console.log("facilDePronunciar = false");
-  // }
-  // if (letrasMinusculas.checked) {
-  //   console.log("letrasMinusculas = true");
-  // } else {
-  //   console.log("letrasMinusculas = false");
-  // }
   function gerarSenha(size) {
     let caracteres = "";
     if (letrasMaiusculas.checked) {
-      caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      if (facilDeLer.checked) {
+        caracteres += "ABCDEFGHJKMNPQRSTUVWXYZ";
+      } else {
+        caracteres += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      }
     }
-    let senha = '';
+    if (letrasMinusculas.checked) {
+      if (facilDeLer.checked) {
+        caracteres += "abcdefghjkmnpqrstuvwxyz";
+      } else {
+        caracteres += "abcdefghijklmnopqrstuvwxyz";
+      }
+    }
+    if (simbolos.checked) {
+      if (facilDeLer.checked) {
+        caracteres += "#%$^*&@";
+      } else {
+        caracteres += "#%$!^*&@";
+      }
+    }
+    if (numeros.checked) {
+      if (facilDeLer.checked) {
+        caracteres += "23456789";
+      } else {
+        caracteres += "1234567890";
+      }
+    }
+    let senha = "";
     for (let i = 0; i < size; i++) {
-      let pos = Math.floor(Math.random() * caracteres.length)
-      senha +=  caracteres.charAt(pos);
+      let pos = Math.floor(Math.random() * caracteres.length);
+      senha += caracteres.charAt(pos);
     }
     return senha;
   }
@@ -69,3 +121,4 @@ gerar.addEventListener("click", function () {
   let randowPass = gerarSenha(sizePassword);
   inputSenha.value = randowPass;
 });
+
