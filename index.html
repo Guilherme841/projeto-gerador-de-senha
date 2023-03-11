@@ -20,11 +20,16 @@
   <main>
     <div id="senhaGerada"><input type="text" name="" id="password"></div>
     <section id="container">
-      <span class="material-symbols-outlined">
+      <div class="material-symbols-outlined" id="mais">
         more_horiz
-      </span>
+      </div>
+      <div id="informaçoes">
+        <p>Fácil de pronunciar: evite números e caracteres especiais.</p><br>
+        <p>Fácil de ler: evite caracteres ambíguos como I,1 ,0 e O </p><br>
+        <p>Todos os caracteres: qualquer combinação como l7%$2O0LiI</p>
+      </div>
       <div><label for="sizes">Tamanho da senha</label><br>
-        <div id="divRange">
+        <div id="divRange" class="opçoes">
           <input type="range" name="range" id="sizes" min="0" max="50" value="8" class="tamanhoDaSenha"
             oninput="ires.innerHTML = Number(sizes.value)">
           <div id="out">
@@ -32,28 +37,27 @@
           </div>
         </div>
       </div>
-      <div><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de <abbr
-            title="asdasdas"></abbr>
+      <div class="opçoes"><input type="radio" name="radiosOptions" id="facilDePronunciar"><label for="facilDePronunciar">Fácil de
           pronunciar</label></div>
-      <div><input type="radio" name="radiosOptions" id="facilDeLer"><label for="facilDeLer">Fácil de ler</label></div>
-      <div><input type="radio" name="radiosOptions" id="todosOsCaracteres"><label for="todosOsCaracteres">Todos os
+      <div class="opçoes"><input type="radio" name="radiosOptions" id="facilDeLer"><label for="facilDeLer">Fácil de ler</label></div>
+      <div class="opçoes"><input type="radio" name="radiosOptions" id="todosOsCaracteres"><label for="todosOsCaracteres">Todos os
           caracteres</label></div>
       </div>
-      <div>
+      <div class="opçoes">
         <input type="checkbox" name="" id="lettersUppercase" class="checkboxes" /><label for="lettersUppercase">
           Letras
           maiúsculas
         </label>
       </div>
-      <div>
+      <div class="opçoes">
         <input type="checkbox" name="" id="lettersLowcase" checked class="checkboxes" /><label
           for="lettersLowcase">Letras minúsculas</label>
       </div>
-      <div><input type="checkbox" name="" id="symbols" class="checkboxes" /><label for="symbols">Símbolos</label></div>
-      <div><input type="checkbox" name="" id="numbers" class="checkboxes" /><label for="numbers">Números</label></div>
+      <div class="opçoes"><input type="checkbox" name="" id="symbols" class="checkboxes" /><label for="symbols">Símbolos</label></div>
+      <div class="opçoes"><input type="checkbox" name="" id="numbers" class="checkboxes" /><label for="numbers">Números</label></div>
       </div>
     </section>
-    <div id="gerar"><button id="gerarSenha">Gerar senha</button></div>
+    <div id="gerar" class="opçoes"><button id="gerarSenha">Gerar senha</button></div>
   </main>
   <script src="scripts/script.js"></script>
 </body>
