@@ -13,22 +13,35 @@ const mais = document.getElementById("mais");
 const informaçoes = document.getElementById("informaçoes");
 const arrChecked = Array.from(checked);
 const radios = document.querySelectorAll("input[type='radio']");
+const copy = document.getElementById("copy");
 const arrRadios = Array.from(radios);
 letrasMinusculas.disabled = true;
 
-mais.addEventListener("click", function() {
+mais.addEventListener("click", function () {
   if (informaçoes.style.display === "none") {
     informaçoes.style.display = "block";
   } else {
     informaçoes.style.display = "none";
   }
-})
+});
 
-document.addEventListener("click" ,function(event) {
+copy.addEventListener("click", function () {
+  if (inputSenha.value.length === 0) {
+    return;
+  }
+  inputSenha.select();
+  document.execCommand("copy");
+  copy.style.backgroundColor = "rgba(87, 255, 87, 0.295)"
+  setTimeout(function () {
+    copy.style.backgroundColor = "white";
+  }, 300);
+});
+
+document.addEventListener("click", function (event) {
   if (!mais.contains(event.target) && informaçoes.style.display === "block") {
     informaçoes.style.display = "none";
   }
-})
+});
 
 function verificar() {
   let contador = 0;
