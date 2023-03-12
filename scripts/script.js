@@ -34,7 +34,7 @@ copy.addEventListener("click", function () {
   copy.style.backgroundColor = "rgba(87, 255, 87, 0.295)"
   setTimeout(function () {
     copy.style.backgroundColor = "white";
-  }, 300);
+  }, 425);
 });
 
 document.addEventListener("click", function (event) {
